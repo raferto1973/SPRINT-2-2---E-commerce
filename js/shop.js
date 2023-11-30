@@ -62,7 +62,7 @@ var products = [
         price: 9.99,
         type: 'clothes'
     }
-]
+] 
 
 // => Reminder, it's extremely important that you debug your code. 
 // ** It will save you a lot of time and frustration!
@@ -78,6 +78,16 @@ var total = 0;
 function buy(id) {
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array
+    
+    let findProduct = products.filter(product => product.id == id);
+             
+    cart.push({findProduct, quantity: 1});    
+    // let findProductCart = cart.filter(product => product.id == id); 
+    // if (!findProductCart) {
+    //     cart.push({findProductCart, quantity: 1});
+    // } else  
+    //     cart.push(findProduct.quantity++);
+    console.log(cart);
 }
 
 // Exercise 2

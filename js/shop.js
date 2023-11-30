@@ -62,7 +62,7 @@ var products = [
         price: 9.99,
         type: 'clothes'
     }
-] 
+]
 
 // => Reminder, it's extremely important that you debug your code. 
 // ** It will save you a lot of time and frustration!
@@ -75,20 +75,34 @@ var cart = [];
 var total = 0;
 
 // Exercise 1
+
 function buy(id) {
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array
-    
-    let findProduct = products.filter(product => product.id == id);
-             
-    cart.push({findProduct, quantity: 1});    
-    // let findProductCart = cart.filter(product => product.id == id); 
-    // if (!findProductCart) {
-    //     cart.push({findProductCart, quantity: 1});
-    // } else  
-    //     cart.push(findProduct.quantity++);
-    console.log(cart);
+
+    // Buscar el producto en el array products
+    let newProduct = products.find(product => product.id === id);
+    console.log(newProduct);
+
+    if (newProduct) {
+        // Verificar si el producto ya está en el carrito
+        let productCart = cart.findIndex(productInCart => productInCart.id === newProduct.id);
+
+        if (productCart !== -1) {
+            // El producto ya está en el carrito, actualiza la cantidad
+            cart[productCart].quantity += 1;
+            console.log("Cantidad del producto incrementada en el carrito");
+        } else {
+            // El producto no está en el carrito, agrégalo con cantidad 1
+            cart.push({ ...newProduct, quantity: 1 });
+            console.log("Producto agregado al carrito");
+        }
+        console.log(cart);
+    } else {
+        console.log("Producto no encontrado");
+    }
 }
+
 
 // Exercise 2
 function cleanCart() {

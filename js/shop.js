@@ -82,8 +82,7 @@ function buy(id) {
 
     // Buscar el producto en el array products
     let newProduct = products.find(product => product.id === id);
-    console.log(newProduct);
-
+    
     if (newProduct) {
         // Verificar si el producto ya está en el carrito
         let productCart = cart.findIndex(productInCart => productInCart.id === newProduct.id);
@@ -106,7 +105,9 @@ function buy(id) {
 
 // Exercise 2
 function cleanCart() {
-
+    cart = [];
+    console.log("Carrito vaciado");
+    console.log(cart);
 }
 
 // Exercise 3

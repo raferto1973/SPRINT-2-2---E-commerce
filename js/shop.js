@@ -99,7 +99,10 @@ function buy(id) {
         console.log(cart);
     } else {
         console.log("Producto no encontrado");
-    }    
+    }   
+    calculateTotal(cart);  
+    applyPromotionsCart(cart);  
+    console.log(cart); 
 }
 
 
@@ -122,12 +125,28 @@ function calculateTotal() {
 
     console.log("Total del carrito: " + total.toFixed(2) + " €");
     return total;
-
 }
 
 // Exercise 4
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
+    
+    for (let i = 0; i < cart.length; i++) {
+        let product = cart[i];
+
+        // Promoción 1: Descuento del 20% en el precio del producto si se compran 3 o más ampolletas d'oli
+        if (product.id == 1 && product.quantity >= 3) {
+            let discount = product.price * 0.20 * product.quantity;
+            product.subtotalWithDiscount = product.price * product.quantity - discount;
+        }
+
+        // Promoción 2: Descuento del 30% en el precio del producto si se compran 10 o más productes per a fer pastissos
+        if (product.id == 3 && product.quantity >= 10) {
+            let discount = product.price * 0.30 * product.quantity;
+            product.subtotalWithDiscount = product.price * product.quantity - discount;
+        }
+    }
+    
 }
 
 // Exercise 5

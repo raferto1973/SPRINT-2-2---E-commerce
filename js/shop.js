@@ -99,7 +99,7 @@ function buy(id) {
         console.log(cart);
     } else {
         console.log("Producto no encontrado");
-    }
+    }    
 }
 
 
@@ -113,6 +113,16 @@ function cleanCart() {
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
+    
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        total += cart[i].price * cart[i].quantity;
+    }
+
+    console.log("Total del carrito: " + total.toFixed(2) + " €");
+    return total;
+
 }
 
 // Exercise 4

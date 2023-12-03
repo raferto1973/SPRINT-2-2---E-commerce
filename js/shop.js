@@ -100,9 +100,8 @@ function buy(id) {
     } else {
         console.log("Producto no encontrado");
     }   
-    calculateTotal(cart);  
-    applyPromotionsCart(cart);  
-    console.log(cart); 
+    applyPromotionsCart(); 
+    calculateTotal();     
 }
 
 
@@ -110,7 +109,8 @@ function buy(id) {
 function cleanCart() {
     cart = [];
     console.log("Carrito vaciado");
-    console.log(cart);
+    console.log(cart);    
+    printCart();
 }
 
 // Exercise 3
@@ -120,11 +120,12 @@ function calculateTotal() {
     let total = 0;
 
     for (let i = 0; i < cart.length; i++) {
-        total += cart[i].price * cart[i].quantity;
+        let product = cart[i];
+        total += (product.subtotalWithDiscount || (cart[i].price * cart[i].quantity));
     }
 
     console.log("Total del carrito: " + total.toFixed(2) + " €");
-    return total;
+    return total;    
 }
 
 // Exercise 4
@@ -138,19 +139,38 @@ function applyPromotionsCart() {
         if (product.id == 1 && product.quantity >= 3) {
             let discount = product.price * 0.20 * product.quantity;
             product.subtotalWithDiscount = product.price * product.quantity - discount;
-        }
+        } 
 
         // Promoción 2: Descuento del 30% en el precio del producto si se compran 10 o más productes per a fer pastissos
         if (product.id == 3 && product.quantity >= 10) {
             let discount = product.price * 0.30 * product.quantity;
             product.subtotalWithDiscount = product.price * product.quantity - discount;
         }
-    }    
+    } 
 }
 
 // Exercise 5
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
+
+    let cartList = document.getElementById('cart_list');
+    cartList.innerHTML = ''; // Limpiamos el contenido actual de la lista del carrito
+
+    cart.forEach(product => {
+        let productoElement = document.createElement('tr');
+        productoElement.innerHTML = `
+            <th scope="row">${product.name}</th>
+            <td>$${product.price.toFixed(2)}</td>
+            <td>${product.quantity}</td>
+            <td>$${(product.subtotalWithDiscount || (product.price * product.quantity)).toFixed(2)}</td>
+        `;
+        cartList.appendChild(productoElement);
+    });
+
+    // Mostrar el total del carrito
+    let totalElement = document.getElementById('total_price');
+    totalElement.textContent = calculateTotal().toFixed(2);
+    
 }
 
 

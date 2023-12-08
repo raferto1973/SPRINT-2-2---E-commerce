@@ -125,6 +125,7 @@ function calculateTotal() {
     }
 
     console.log("Total del carrito: " + total.toFixed(2) + " €");
+    
     return total;    
 }
 
@@ -136,21 +137,28 @@ function applyPromotionsCart() {
         let product = cart[i];
 
         // Promoción 1: Descuento del 20% en el precio del producto si se compran 3 o más ampolletas d'oli
-        if (product.id == 1 && product.quantity >= 3) {
-            let discount = product.price * 0.20 * product.quantity;
-            product.subtotalWithDiscount = product.price * product.quantity - discount;
-        } 
+        if (product.id === 1 && product.quantity >= 3) {
+            let discount = product.price * 0.20;
+            product.subtotalWithDiscount = (product.price - discount) * product.quantity;
+        } else if (product.id === 1) {
+            product.subtotalWithDiscount = undefined; // No hay descuento
+        }
 
         // Promoción 2: Descuento del 30% en el precio del producto si se compran 10 o más productes per a fer pastissos
-        if (product.id == 3 && product.quantity >= 10) {
-            let discount = product.price * 0.30 * product.quantity;
-            product.subtotalWithDiscount = product.price * product.quantity - discount;
+        if (product.id === 3 && product.quantity >= 10) {
+            let discount = product.price * 0.30;
+            product.subtotalWithDiscount = (product.price - discount) * product.quantity;
+        } else if (product.id === 3) {
+            product.subtotalWithDiscount = undefined; // No hay descuento
         }
     } 
+    console.log("Promociones aplicadas:", cart);
 }
 
 // Exercise 5
 function printCart() {
+
+    
     // Fill the shopping cart modal manipulating the shopping cart dom
 
     let cartList = document.getElementById('cart_list');
@@ -163,22 +171,45 @@ function printCart() {
             <td>$${product.price.toFixed(2)}</td>
             <td>${product.quantity}</td>
             <td>$${(product.subtotalWithDiscount || (product.price * product.quantity)).toFixed(2)}</td>
+            <td><button class="btn btn-danger" onclick="removeFromCart(${product.id})">Remove</button></td>
+            
         `;
         cartList.appendChild(productoElement);
     });
 
     // Mostrar el total del carrito
     let totalElement = document.getElementById('total_price');
-    totalElement.textContent = calculateTotal().toFixed(2);
-    
+    totalElement.textContent = calculateTotal().toFixed(2);    
 }
 
 
 // ** Nivell II **
 
 // Exercise 7
-function removeFromCart(id) {
+function removeFromCart(productId) {
+    
+     // Buscar el producto en el carrito por su identificador
+     let productIndex = cart.findIndex(product => product.id === productId);
 
+     if (productIndex !== -1) {
+         // Reducir la cantidad del producto en una unidad
+         cart[productIndex].quantity -= 1;
+         
+ 
+         // Si la cantidad llega a 0, eliminar el producto del carrito
+         if (cart[productIndex].quantity === 0) {
+             cart.splice(productIndex, 1);
+         }        
+
+        // Actualizar las promociones después de modificar el carrito        
+        applyPromotionsCart();
+
+        // Actualizar el contenido del carrito en el DOM
+        printCart();
+  
+     } else {
+         console.log("Producto no encontrado en el carrito");
+     }
 }
 
 function open_modal() {

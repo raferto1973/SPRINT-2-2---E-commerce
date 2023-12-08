@@ -105,7 +105,9 @@ function buy(id) {
 }
 
 
+
 // Exercise 2
+
 function cleanCart() {
     cart = [];
     console.log("Carrito vaciado");
@@ -113,7 +115,9 @@ function cleanCart() {
     printCart();
 }
 
+
 // Exercise 3
+
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
     
@@ -129,7 +133,10 @@ function calculateTotal() {
     return total;    
 }
 
+
+
 // Exercise 4
+
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
 
@@ -155,10 +162,11 @@ function applyPromotionsCart() {
     console.log("Promociones aplicadas:", cart);
 }
 
-// Exercise 5
-function printCart() {
 
-    
+
+// Exercise 5
+
+function printCart() {    
     // Fill the shopping cart modal manipulating the shopping cart dom
 
     let cartList = document.getElementById('cart_list');
@@ -183,9 +191,11 @@ function printCart() {
 }
 
 
+
 // ** Nivell II **
 
 // Exercise 7
+
 function removeFromCart(productId) {
     
      // Buscar el producto en el carrito por su identificador

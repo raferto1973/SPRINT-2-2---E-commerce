@@ -101,7 +101,8 @@ function buy(id) {
         console.log("Producto no encontrado");
     }   
     applyPromotionsCart(); 
-    calculateTotal();     
+    calculateTotal(); 
+    printCart();    
 }
 
 
@@ -179,11 +180,18 @@ function printCart() {
             <td>$${product.price.toFixed(2)}</td>
             <td>${product.quantity}</td>
             <td>$${(product.subtotalWithDiscount || (product.price * product.quantity)).toFixed(2)}</td>
-            <td><button class="btn btn-danger" onclick="removeFromCart(${product.id})">Remove</button></td>
+            <td><button class="btn btn-danger shadow" onclick="removeFromCart(${product.id})">Remove</button></td>
             
         `;
         cartList.appendChild(productoElement);
     });
+
+     // Obtén el elemento con el id "count_product"
+     let countProductElement = document.getElementById('count_product');
+
+     // Actualiza el contenido con la cantidad de productos en el carrito
+     countProductElement.textContent = cart.reduce((total, product) => total + product.quantity, 0);
+ 
 
     // Mostrar el total del carrito
     let totalElement = document.getElementById('total_price');

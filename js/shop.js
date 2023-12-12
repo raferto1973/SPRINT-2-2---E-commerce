@@ -138,33 +138,6 @@ function calculateTotal() {
 
 // Exercise 4
 
-// function applyPromotionsCart() {
-//     // Apply promotions to each item in the array "cart"
-
-//     for (let i = 0; i < cart.length; i++) {
-//         let product = cart[i];
-
-//         // Promoción 1: Descuento del 20% en el precio del producto si se compran 3 o más ampolletas d'oli
-//         if (product.id === 1 && product.quantity >= 3) {
-//             let discount = product.price * 0.20;
-//             product.subtotalWithDiscount = (product.price - discount) * product.quantity;
-//         } else if (product.id === 1) {
-//             product.subtotalWithDiscount = undefined; // No hay descuento
-//         }
-
-//         // Promoción 2: Descuento del 30% en el precio del producto si se compran 10 o más productes per a fer pastissos
-//         if (product.id === 3 && product.quantity >= 10) {
-//             let discount = product.price * 0.30;
-//             product.subtotalWithDiscount = (product.price - discount) * product.quantity;
-//         } else if (product.id === 3) {
-//             product.subtotalWithDiscount = undefined; // No hay descuento
-//         }
-//     } 
-//     console.log("Promociones aplicadas:", cart);
-// }
-
-// Version reutilizable ( corrección )
-
 function applyPromotionsCart() {
     
     for (let i = 0; i < cart.length; i++) {

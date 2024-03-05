@@ -1,72 +1,67 @@
-# Sprint 2 IT Academy | Shop
-
-## Introduction
-
-A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.
-
-You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of the promotions on the final price. You have 2 weeks to finish, which is how long this sprint lasts.
-
-<br>
-
-## Requirements
+![image](https://github.com/raferto1973/SPRINT-2_2-IT_ACADEMY/assets/148342825/a9a2c1b7-0dcb-40e2-8d2f-cb3af8d0ff2f)
 
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-shop
+Certainly! Based on the HTML snippet provided, here's a README.md that you can use for your online shop project with Bootstrap, complete with colorful icons and engaging formatting:
+
+```markdown
+# 🛍️ ShopNow - Your Online Marketplace
+
+Welcome to the **ShopNow** repository! This is your go-to solution for setting up an online store complete with a shopping cart, vibrant product displays, and seamless user interactions. Dive into a hassle-free shopping experience!
+
+## 🎨 Styling
+The project is styled with Bootstrap and FontAwesome icons, ensuring a responsive and mobile-friendly interface. Our palette:
+- Grocery: 🟢 `text-success`
+- Beauty: 🔵 `text-info`
+- Clothes: 🟠 `text-warning`
+
+## 🚀 Getting Started
+To get started with **ShopNow**, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/raferto1973/SPRINT-2_2-IT_ACADEMY.git
+    ```
+2. Navigate to your project directory.
+3. Open the `index.html` file in your preferred web browser to launch the application.
+
+## 📜 Features
+Our shopping platform features:
+- **Cart Functionality** 🛒: Easy to view and modify your selections.
+- **Product Categories** 🏷️:
+  - Grocery items with fresh quality picks. 🍎
+  - Beauty products to pamper yourself. 💄
+  - Fashionable clothes for your wardrobe. 👗
+- **Deals and Discounts** 💸: Special offers that you can't resist.
+
+## 🛠️ Installation
+Make sure you have the latest version of [Bootstrap](https://getbootstrap.com/) and [FontAwesome](https://fontawesome.com/) linked in your project.
+
+## 📁 File Structure
+Here's how we're organized:
+```
+ShopNow/
+│   index.html
+│   favicon.ico
+│   ...
+└───images/
+│   │   cooking_oil.jpg
+│   │   pasta.jpg
+│   │   ...
+└───js/
+    │   shop.js
+    │   checkout.js
 ```
 
-2. Unlink your repo from the itacademy repository.
-(Explanation: You have to upload the code to your GitHub repository, not to the IT Academy. That's why you have to unlink your project from IT Academy GitHub with the following command)
+## 🤝 Contributing
+We love your input! We want to make contributing to this project as easy and transparent as possible. If you have suggestions, please:
+1. Fork the repo and create your branch from `main`.
+2. Make your changes and test them.
+3. Issue that pull request!
 
-```bash
-$ git remote rm origin
+## 📩 Contact
+If you want to contact us, you can reach out on our [GitHub profile](https://github.com/raferto1973).
+
+Happy Shopping with **ShopNow**! 🎉
+
 ```
 
-3. Link your repo to the repository you have to create in your github account
-(Explanation: Now your project is not linked to any remote repository. In order to upload your code, you have to link your project to the new repository created on github.com using the following command)
-
-```bash
-$ git remote add origin <your repo name!>
-```
- 
-<br>
-
-## Submission
-
-1. Upon completion, run the following commands:
-
-```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
-```
-
-2. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
-
-
-
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
-<br>
-
-
-## Instructions
-
-You have the following indications from the frontend manager:
-
-- You have prepared the base of the project on which you will work: https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-
-- The base of the project on which you will work has already created all the files, and an initial version of the interface, so you can focus on programming the logic.
-
-- As at the moment we don't consume data from a server using an API, we will work with hardcoded data in the application. For the moment we will implement the logic using a small group of 9 products divided in 3 sections.
-
-- Except for the last level, showing the result of the functions by console is enough.
-
-- The logic to implement will be placed in the src/grocery.js and src/checkout.js files. You will see that the built in functions have already been created for you to implement them.
-
-- It is forbidden to copy the code, since this way you don't learn anything. Furthermore, as you can see, the second release of sprint 5 is a mini-level test with the mentor, in which you will have to demonstrate live that you have acquired the javascript concepts. Don't worry, if you work on the releases you won't have any problems.

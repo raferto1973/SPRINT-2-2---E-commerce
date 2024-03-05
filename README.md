@@ -33,21 +33,6 @@ Our shopping platform features:
 ## 🛠️ Installation
 Make sure you have the latest version of [Bootstrap](https://getbootstrap.com/) and [FontAwesome](https://fontawesome.com/) linked in your project.
 
-## 📁 File Structure
-Here's how we're organized:
-
-ShopNow/
-│ index.html
-│ favicon.ico
-│ ...
-└───images/
-│ │ cooking_oil.jpg
-│ │ pasta.jpg
-│ │ ...
-└───js/
-│ shop.js
-│ checkout.js
-
 
 ## 🤝 Contributing
 We love your input! We want to make contributing to this project as easy and transparent as possible. If you have suggestions, please:

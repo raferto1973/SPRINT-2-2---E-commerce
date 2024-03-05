@@ -1,8 +1,6 @@
 ![image](https://github.com/raferto1973/SPRINT-2_2-IT_ACADEMY/assets/148342825/a9a2c1b7-0dcb-40e2-8d2f-cb3af8d0ff2f)
 
 
-Certainly! Based on the HTML snippet provided, here's a README.md that you can use for your online shop project with Bootstrap, complete with colorful icons and engaging formatting:
-
 ```markdown
 # 🛍️ ShopNow - Your Online Marketplace
 
